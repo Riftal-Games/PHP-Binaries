@@ -36,6 +36,7 @@ EXT_MORTON_VERSION="0.1.2"
 EXT_XXHASH_VERSION="0.2.0"
 EXT_ARRAYDEBUG_VERSION="0.2.0"
 EXT_ENCODING_VERSION="0.4.0"
+EXT_REDIS_VERSION="6.0.2"
 
 function write_out {
 	echo "[$1] $2"
@@ -1105,6 +1106,8 @@ get_github_extension "yaml" "$EXT_YAML_VERSION" "php" "pecl-file_formats-yaml"
 
 get_github_extension "igbinary" "$EXT_IGBINARY_VERSION" "igbinary" "igbinary"
 
+get_pecl_extension "redis" "$EXT_REDIS_VERSION"
+
 get_github_extension "recursionguard" "$EXT_RECURSIONGUARD_VERSION" "pmmp" "ext-recursionguard"
 
 echo -n "  crypto: downloading $EXT_CRYPTO_VERSION..."
@@ -1255,6 +1258,7 @@ $HAVE_MYSQLI \
 --enable-xxhash \
 --enable-arraydebug \
 --enable-encoding \
+--enable-redis \
 $HAVE_VALGRIND \
 $CONFIGURE_FLAGS >> "$DIR/install.log" 2>&1
 write_compile
