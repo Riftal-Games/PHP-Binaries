@@ -119,3 +119,7 @@ This script doesn't accept parameters, but the following environment variables a
 | Link to package | Needed for | Notes |
 |:----------------|:-----------|:------|
 | [php-sdk-binary-tools](https://github.com/php/php-sdk-binary-tools/releases) | Building PHP on Windows | |
+
+### Riftal
+- Add redis extention 
+
