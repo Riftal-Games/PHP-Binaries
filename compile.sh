@@ -1231,7 +1231,7 @@ $HAS_DEBUG \
 --enable-xmlwriter \
 --disable-cgi \
 --disable-phpdbg \
---disable-session \
+--enable-session \
 --without-pear \
 --without-iconv \
 --with-pdo-sqlite \
