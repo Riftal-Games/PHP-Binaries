@@ -37,6 +37,9 @@ EXT_XXHASH_VERSION="0.2.0"
 EXT_ARRAYDEBUG_VERSION="0.2.0"
 EXT_ENCODING_VERSION="0.4.0"
 EXT_REDIS_VERSION="6.0.2"
+EXT_RIFTAL_PATHFINDING_VERSION="1.0.0"
+EXT_RIFTAL_TERRAIN_VERSION="1.0.0"
+EXT_RIFTAL_STATS_VERSION="1.0.0"
 
 function write_out {
 	echo "[$1] $2"
@@ -1132,7 +1135,16 @@ get_github_extension "arraydebug" "$EXT_ARRAYDEBUG_VERSION" "pmmp" "ext-arraydeb
 
 get_github_extension "encoding" "$EXT_ENCODING_VERSION" "pmmp" "ext-encoding"
 
+get_github_extension "riftal_pathfinding" "$EXT_RIFTAL_PATHFINDING_VERSION" "Riftal-Games" "ext-pathfinding"
+
+get_github_extension "riftal_terrain" "$EXT_RIFTAL_TERRAIN_VERSION" "Riftal-Games" "ext-terrain"
+
+get_github_extension "riftal_stats" "$EXT_RIFTAL_STATS_VERSION" "Riftal-Games" "ext-stats"
+
 write_library "PHP" "$PHP_VERSION"
+write_library "riftal_pathfinding" "$EXT_RIFTAL_PATHFINDING_VERSION"
+write_library "riftal_terrain" "$EXT_RIFTAL_TERRAIN_VERSION"
+write_library "riftal_stats" "$EXT_RIFTAL_STATS_VERSION"
 
 write_configure
 cd php
@@ -1259,6 +1271,9 @@ $HAVE_MYSQLI \
 --enable-arraydebug \
 --enable-encoding \
 --enable-redis \
+--enable-riftal_pathfinding \
+--enable-riftal_terrain \
+--enable-riftal_stats \
 $HAVE_VALGRIND \
 $CONFIGURE_FLAGS >> "$DIR/install.log" 2>&1
 write_compile
